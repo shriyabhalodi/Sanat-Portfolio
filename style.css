@@ -1,0 +1,805 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(39, 59, 70), rgba(39, 59, 70));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index:2;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+}
+
+/* Underline animation styles for menu items */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #9DD4B5;
+    transition: width 0.5s ease;
+}
+
+/* Apply the underline animation on hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Apply the underline animation for active menu items */
+nav ul li a.active::after {
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+span {
+    font-size: 40px;
+    font-weight: bold;
+    color: #9DD4B5;
+}
+
+.content {
+    text-align: right; /* Align content to the right */
+    position: absolute;
+    top: 50%;
+    right: 15%; /* Adjust to position it to the right */
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure it's above the typing animation */
+}
+
+.content h1 {
+    font-size: 40px;
+    color: #9DD4B5;
+    font-weight: 600;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.back-video {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    z-index: 0; /* Set a lower z-index for the video to ensure it's behind the content */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animation styles */
+#typing-animation {
+    margin-top: 30px; /* Adjust as needed */
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure it's above the content */
+}
+
+#typing-animation:before {
+    content: "";
+     font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ccc;
+    animation:0.5s ease-in-out infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes typing-cursor {
+    from {
+        width: 5px;
+    }
+    to {
+        width: 0;
+    }
+}
+
+/* About Me */
+
+.about-me {
+    width: 100%; /* Adjust as needed */
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-top: 40px;
+      margin-bottom: 40px;
+}
+.title
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative; /* Ensure position is relative */
+    z-index: 2;
+    margin: 20px auto;
+}
+.title h2 {
+    color: #9DD4B5;
+    font-size: 46px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto; /* Center horizontally */
+    width: 90%; 
+}
+
+.image {
+    width: 40%; /* Adjust as needed */
+}
+
+.image img {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 10px;
+}
+
+article {
+    width: 90%; /* Adjust as needed */
+}
+
+article h3 {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
+}
+article h2 {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+article .btn {
+    margin-top: 30px;
+}
+
+article a {
+    color: white;
+    background-color: #9DD4B5;
+    padding: 15px 30px;
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+}
+/* Experience */
+
+.Experience {
+    width: 100%;
+    margin-top: 40px; 
+}
+
+.Experience .Experience-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+      margin-top: 40px; /* Center both columns horizontally with space around */
+}
+.Experience-row
+{
+    animation: fadeInRight 2s ease;
+}
+.Experience-row .Experience-column {
+    flex: 1; /* Allow columns to grow equally */
+    max-width: 690px; /* Adjust maximum width as needed */
+}
+
+.Experience-left, .Experience-right {
+    margin: 0 200px; /* Adjusted margin for consistency */
+}
+
+.Experience-column.edu {
+    font-size: 20px; /* converted from 30px */
+    margin: 0 0 10px 10px; /* Adjusted margin for consistency */
+    padding: 10px; /* Increased padding for larger box */
+}
+
+/* Position the education column on the left */
+.Experience-left {
+    order: -1; /* Place education column first */
+    margin-right: 10px; /* Adjusted margin for consistency */
+}
+
+/* Position the experience column on the right */
+.Experience-right {
+    order: 1; /* Place experience column second */
+    margin-left: 20px; /* Adjusted margin for consistency */
+}
+
+.Experience-column .Experience-box {
+    border-left: 4px solid #9DD4B5; /* converted from 4px */
+}
+
+.Experience-row .Experience-content {
+    position: relative;
+    padding-left: 20px; /* Adjusted padding for consistency */
+}
+
+.Experience-content .exp-content {
+    position: relative;
+    padding: 20px; /* Increased padding for larger box */
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 3px solid #9DD4B5; /* converted from 3px */
+    border-radius: 10px; /* Adjusted border radius for consistency */
+    margin-bottom: 20px; /* Adjusted margin for consistency */
+}
+
+.Experience-content .exp-content .year {
+    font-size: 20px; /* converted from 20px */
+    color: #9DD4B5;
+    padding-bottom: 12px; /* converted from 16px */
+}
+
+.Experience-content .exp-content .year i {
+    padding-right: 8px; /* converted from 8px */
+}
+
+.Experience-content .exp-content h3 {
+    font-size: 15px; /* converted from 22px */
+}
+
+.Experience-content .exp-content p {
+    font-size: 13px; /* converted from 22px */
+}
+
+/* Certifications */
+.Certifications
+{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.Certifications-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center align items horizontally */
+    text-align: center;
+    margin-top: 40px;
+}
+
+.row {
+    width: calc(50% - 210px); /* Set the width to 50% minus the margin */
+    margin: 0 10px 20px; /* Add some margin between items */
+    border: 2px solid #9DD4B5; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    padding: 10px; /* Add padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.row img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.row h5 {
+    margin: 0;
+}
+
+/* Tools */
+
+.Tools-Technology {
+    text-align: center; /* Center align the content */
+    width: 100%;
+    margin-top: 40px;
+}
+
+.tools
+{
+    margin-left: 100px;
+    margin-right: 100px;
+      margin-top: 40px;
+}
+.tool-pair {
+    display: flex;
+    justify-content: center; /* Center the pairs of tools */
+    margin-bottom: 20px; /* Reduce space between pairs */
+}
+
+.tool-list {
+    width: 25%; /* Each list takes up 50% of the width */
+    box-sizing: border-box; /* Include padding and border in the width */
+    padding: 0 10px; /* Reduce horizontal padding */
+}
+
+.tool-item {
+    background-color: #c7c8c7;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px; /* Reduce space between items */
+    height: 150px; /* Set a fixed height for all tool items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tool-item img {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    margin-bottom: 9px;
+    margin-top: 15px;
+}
+
+.tool-item h2 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Contact me */
+
+.contact {
+    width: 100%; /* Adjust as needed */
+      margin-top: 40px;
+}
+.contact-me {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    width: 80%; /* Adjust as needed */
+    margin: 0 auto; /* Center horizontally */
+    margin-bottom: 30px;
+      margin-top: 40px;
+}
+
+.image-1 {
+    flex: 1; /* Take up remaining space */
+    width: 60%; /* Adjust width as needed */
+    max-width: 200px;
+}
+
+.image-1 img {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.content-contact {
+    flex: 1; /* Take up remaining space */
+    padding-left: 30px; /* Add space between image and content */
+}
+
+.content-contact p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 20px;
+}
+
+.icon {
+    font-size: 15px;
+}
+
+.to-top {
+    background: black;
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 37px;
+    color: white;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s, bottom 0.4s;
+    cursor: pointer;
+}
+
+.to-top.active {
+    bottom: 20px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+/* Style for the footer section */
+footer {
+    background-color: #dcdcdc; /* Background color */
+    padding: 20px; /* Padding around the content */
+    text-align: center; /* Align the content to the center */
+}
+
+/* Style for the footer content */
+.bottom-part-content {
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for the footer heading */
+.bottom-part-content h4 {
+    font-size: 18px; /* Font size */
+    color: #333; /* Text color */
+}
+
+/* Style for the footer paragraph */
+.bottom-part-content p {
+    font-size: 14px; /* Font size */
+    color: #666; /* Text color */
+    margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* Menu Toggle Button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Navigation Menu */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #233B46;
+        padding: 10px;
+        z-index: 999;
+    }
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li a {
+        display: block;
+        margin: 10px 0;
+        position: relative;
+    }
+
+    .home
+    {
+        width: 100%;
+        height: 33vh;
+    }
+    .back-video {
+        width: 100%; /* Make video width 100% of the viewport width */
+        height: 33vh; /* Allow the height to adjust proportionally */
+    }
+    .content {
+    text-align: right; /* Align content to the right */
+    position: absolute;
+    top: 60%;
+    right: 10%; /* Adjust to position it to the right */
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure it's above the typing animation */
+    }
+
+    .content h1 {
+        font-size: 20px;
+        margin-bottom: 30px; /* Adjust as needed */
+    }
+    #typing-animation {
+        margin-top: 15px; /* Adjust margin top for smaller screens */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+    /* About Me Section */
+
+    .about {
+        flex-direction: column; /* Change flex-direction to stack elements vertically */
+        align-items: center; /* Center items vertically */
+        width: 90%;
+    }
+
+    .image {
+        width: 70%; /* Make image width 80% of the container */
+        margin: 0 auto; /* Center the image horizontally */
+        margin-bottom: 20px; /* Add margin at the bottom for spacing */
+    }
+
+    article {
+        width: 80%;
+        margin-bottom: 80px; /* Make article width 80% of the container */
+    }
+    article h3
+    {
+        width: 98%;
+    }
+    .edu-item 
+    {
+        width: 400px; /* Decreased width */
+    }
+    .edu-item i {
+        font-size: 40px; /* Decreased icon size */
+        margin-bottom: 6px; /* Decreased margin-bottom */
+    }
+
+    .edu-item h2 
+    {
+        font-size: 19px; /* Decreased heading font size */
+        font-weight: 500;
+        margin-bottom: 10px; /* Decreased margin-bottom */
+    }
+    .edu-item h3
+    {
+        font-size: 19px;
+        font-weight: 500;
+    }
+
+    /* Experience Section */
+
+    .Experience .Experience-row {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center;
+    }
+
+    .Experience-row .Experience-column {
+        max-width: none; /* Remove the maximum width */
+        width: calc(90% - 20px); /* Set width to 100% */
+        margin: 0; /* Remove margin */
+    }
+
+
+    /* Certifications Section */
+    .Certifications-content .row {
+        width: calc(46% - 20px); /* Adjusted width for two columns with spacing */
+        margin: 10px; /* Adjusted margin for spacing between rows and columns */
+    }
+
+    .Certifications-content .row img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .Certifications-content .row h5 {
+        font-size: 14px;
+    }
+
+    /* Tools Section */
+
+    .tools {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .tool-list {
+        width: 35%; /* Set width to occupy approximately 50% of the width for two columns */
+    }
+    .tool-item 
+    {
+        height: 180px; /* Set a fixed height for all tool items */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    /* Contact Me Section */
+
+    .contact-me {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text */
+    }
+
+    .image-1 {
+        width: 80%; /* Adjust width for smaller screens */
+        margin-bottom: 20px; /* Add space between image and content */
+    }
+
+    .content-contact {
+        width: 100%; /* Make content full width on smaller screens */
+        padding: 0 10px; /* Add padding to the sides */
+    }
+
+    .to-top {
+        width: 80px;
+        height: 80px;
+        font-size: 25px;
+    }
+    .to-top.active {
+    bottom: 40px;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    /* Menu Toggle Button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Navigation Menu */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #233B46;
+        padding: 10px;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li a {
+        display: block;
+        margin: 10px 0;
+        position: relative;
+    }
+    .edu-item 
+    {
+        width: 400px; /* Decreased width */
+    }
+    .edu-item i {
+        font-size: 40px; /* Decreased icon size */
+        margin-bottom: 6px; /* Decreased margin-bottom */
+    }
+
+    .edu-item h2 
+    {
+        font-size: 19px; /* Decreased heading font size */
+        font-weight: 500;
+        margin-bottom: 10px; /* Decreased margin-bottom */
+    }
+    .edu-item h3
+    {
+        font-size: 19px;
+        font-weight: 500;
+    }
+    
+
+    /* About Me Section */
+    .about {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .image {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    article {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Experience Section */
+    .Experience .Experience-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Experience-row .Experience-column {
+        max-width: none;
+        width: calc(90% - 20px);
+        margin: 0;
+    }
+
+    /* Certifications Section */
+    .Certifications-content .row {
+        width: calc(46% - 20px);
+        margin: 10px;
+    }
+
+    .Certifications-content .row img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .Certifications-content .row h5 {
+        font-size: 14px;
+    }
+
+    /* Tools Section */
+    .tool-list {
+        width: 100%; /* Set full width for single column */
+        margin: 0; /* Remove margin */
+    }
+    
+    /* Contact Me Section */
+    .contact-me {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-1 {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .content-contact {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .to-top {
+        width: 80px;
+        height: 80px;
+        font-size: 25px;
+    }
+    .to-top.active {
+    bottom: 40px;
+    }
+
+}
+
